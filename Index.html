@@ -1,0 +1,37 @@
+﻿<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+    
+<script type="text/javascript" src="jquery1.7.js"></script>
+<script type="text/javascript" src="jqote2.js"></script>
+<script type="text/javascript" src="treeView.js"></script>
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="site.css">
+</head>
+<body>
+<h1>Tree View</h1>
+<div id="TreeViewContainer">
+</div>
+<script type="text/x-jqote-template" id="treeTemplate">
+
+   <![CDATA[
+   <div class="trees">
+    <ul>
+    <% for(var i in this.TreeNodes) { %>
+    <li data-name='<%=this.TreeNodes[i].Name %>'>
+    <% if(this.TreeNodes[i].HaveChildren) { %>
+    <span class="expand" isloading="true">+<span style='display:none'></span></span>
+    <% } else {%>
+    <span style='padding:5px;font-weight:bold;font-size:1.4em'>-</span>
+    <% }  %>
+    <%=this.TreeNodes[i].Name %>
+
+    </li>
+    <% } %>
+    </ul>
+    </div>
+    ]]>
+
+</script>
+</body>
+</html>
